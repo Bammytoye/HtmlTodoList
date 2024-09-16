@@ -554,15 +554,36 @@ video {
   --tw-contain-style:  ;
 }
 
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
+.flex {
+  display: flex;
 }
 
-.font-bold {
-  font-weight: 700;
+.items-center {
+  align-items: center;
 }
 
-.underline {
-  text-decoration-line: underline;
+.justify-center {
+  justify-content: center;
+}
+
+.bg-green-800 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(22 101 52 / var(--tw-bg-opacity));
+}
+
+.pb-72 {
+  padding-bottom: 18rem;
+}
+
+.pt-32 {
+  padding-top: 8rem;
+}
+
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+.font-extrabold {
+  font-weight: 800;
 }

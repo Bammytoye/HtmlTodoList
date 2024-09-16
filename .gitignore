@@ -1,12 +1,1 @@
-# Node modules
-/node_modules
-
-# Log files
-*.log
-
-# Temporary files
-*.tmp
-
-# Dependency files
-package-lock.json
-yarn.lock
+*node_modules
