@@ -1,6 +1,7 @@
 const toDoInput = document.querySelector('.todoInput');
 const toDoBtn = document.querySelector('.todoBtn');
 const toDoList = document.querySelector('.List');
+const errorMessage = document.querySelector('#errorMessage'); 
 
 toDoBtn.addEventListener('click', addToDo);
 toDoList.addEventListener('click', deleteCheck);
@@ -8,13 +9,17 @@ document.addEventListener("DOMContentLoaded", getTodos);
 
 function addToDo(event) {
     event.preventDefault();
+
+    // Clear previous error message
+    errorMessage.style.display = 'none';
     
     const toDoDiv = document.createElement("div");
     toDoDiv.classList.add('todo');
     
     const newToDo = document.createElement('li');
     if (toDoInput.value === '') {
-        alert("You must write something!");
+        errorMessage.innerText = "You must write something!";
+        errorMessage.style.display = 'block';
         return;
     } else {
         newToDo.innerText = toDoInput.value;

@@ -8,6 +8,14 @@ body{
     /* background-color:  rgb(31, 27, 27); */
 }
 
+.error-message {
+    color: red;
+    font-size: 14px;
+    display: none;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
 .body {
     background-color: rgb(31, 27, 27);
     display: flex;
