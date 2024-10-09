@@ -1,0 +1,267 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    /* background-color:  rgb(31, 27, 27); */
+}
+
+.body {
+    background-color: rgb(31, 27, 27);
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding-top: 3%;
+    width: 90%;
+    max-width: 750px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 30px;
+    border: 2px solid #fff;
+}
+
+#dateTime {
+    color: whitesmoke;
+}
+
+#MainHeader, #form, #dateTime {
+    margin: 0 1rem;
+    min-height: 10vh;
+    width: 100%;
+}
+
+#MainHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 3rem;
+    min-height: 25vh;
+}
+
+#title {
+    border-right: solid 3px rgba(0, 0, 0, 0.75);
+    white-space: nowrap;
+    color: white;
+    overflow: hidden;
+    margin: 0px 0px 0px 0px;
+    animation: animated-text 2s steps(11,end) 0.5s 1 normal both,
+               animated-cursor 750ms steps(11,end) infinite;
+}
+
+#titleBar {
+    font-size: 12px;
+    font-style: italic;
+    font-weight: 600;
+    color: whitesmoke;
+}
+
+@keyframes animated-text {
+    from { width: 0; }
+    to { width: 480px; }
+}
+
+@keyframes animated-cursor {
+    from { border-right-color: rgba(0, 0, 0, 0.75); }
+    to { border-right-color: transparent; }
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    margin: 15px 0;
+    padding: 0.8rem;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.icon {
+    width: 20px; 
+    height: 20px;
+    vertical-align: middle; 
+    cursor: pointer;
+}
+
+form input {
+    padding: 10px;
+    font-size: 17px;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #fffefe;
+    border-left: 2px solid #fff;
+    border-top: 2px solid #fff;
+    border-radius: 17px 0 0 17px;
+    outline: none;
+    max-width: 500px;
+    width: 100%;
+    background: transparent;
+    color: white;
+    transition: border-color 0.3s ease;
+}
+
+form input:hover {
+    border-color: #ccc;
+    cursor: text;
+}
+
+form button {
+    outline: none;
+    padding: 10px;
+    font-size: 17px;
+    background-color: #fff;
+    color: rgb(5, 3, 3);
+    border: none;
+    border-radius: 0 17px 17px 0;
+    border-bottom: 2px solid #c7c7c7;
+    border-right: 2px solid #c7c7c7;
+    min-width: 100px;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    cursor: pointer;
+    background-color: #ddd;
+}
+
+#Main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+}
+
+.List {
+    min-width: 25%;
+    list-style: none;
+}
+
+.todo {
+    margin: 1rem;
+    font-size: 19px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5em;
+    border-radius: 30px;
+    background-color: #fffefe;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.todo:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.todo li {
+    padding: 7px;
+    word-wrap: break-word;
+    flex-wrap: wrap;
+    font-size: 20px;
+    flex: 1;
+    border-radius: 30px;
+    overflow-wrap: anywhere;
+}
+
+.check-btn, .delete-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.todo-item {
+    padding: 0rem 0.5rem;
+    cursor: pointer;
+}
+
+.completed {
+    transition: 0.1s;
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+.fall {
+    transition: 0.3s ease;
+    transform: translateY(45rem) rotateZ(45deg);
+    opacity: 0;
+}
+
+
+/* Responsive Design */
+@media only screen and (max-width: 800px) {
+    .body {
+        width: 100%;
+        padding: 0 1rem;
+    }
+
+    #MainHeader {
+        font-size: 2rem;
+    }
+
+    #title {
+        animation: 
+            animated-text 3s steps(16, end) 0.5s 1 normal both,
+            animated-cursor 750ms steps(16, end) infinite;
+        max-width: 330px;
+    }
+
+    form input {
+        font-size: 16px;
+        max-width: 80%;
+    }
+
+    form button {
+        min-width: 80px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    #MainHeader {
+        font-size: 1.5rem;
+    }
+
+    #title {
+        animation: 
+            animated-text 3.5s steps(16, end) 0.5s 1 normal both,
+            animated-cursor 750ms steps(16, end) infinite;
+        max-width: 255px;
+    }
+
+    form {
+        align-items: center;
+        flex-direction: column;
+        padding: 0 20px;
+    }
+
+    form input {
+        border-radius: 17px;
+        width: 100%;
+    }
+
+    form button {
+        border-radius: 15px;
+        margin-top: 15px;
+        width: 100%;
+    }
+
+    .todo {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .todo li {
+        font-size: 18px;
+        width: 100%;
+    }
+
+    .icon {
+        width: 18px;
+        height: 18px;
+    }
+}
